@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style type="text/css">
+        li::before { 
+            content: "* ";
+            color: red;
+            padding: 15px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <table id="here_table" class="table">
+                <tr>
+                    <td>123</td>
+                    <td>5555</td>
+                    <td><button id="btn1">Press me</button></td>
+                </tr>
+                <tr>
+                    <td>dfsd</td>
+                    <td>123</td>
+                    <td><button id="btn1">Press me</button></td>
+                </tr>
+                <tr>
+                    <td>123</td>
+                    <td>jkkkkk</td>
+                    <td><button id="btn1">Press me</button></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <button id="btn1" class="btn btn-primary">Button</button>
+        </div>
+    </div>
+    <div id="div1">
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function(){
+            function getF(data){
+                $.each(data,function(i,val){
+                    //$('#div1').
+                    console.log(val);
+                });
+                
+            }
+            
+            $('#btn1').click(function(){
+                $.ajax({
+                    url: 'http://test11.avaddonval.kz/all',
+                    type: 'GET',
+                    success: getF,
+                });
+
+                
+            });
+
+            
+
+
+
+        });
+    </script>
+</body>
+</html>
